@@ -54,7 +54,7 @@ class Test():
 		print('area calcu...')
 		return self.Pi*self.r**2
 	area = LazyProperty(area)
-(上面本来是想用"def area_t(self) ...... area = LazyProperty(area_t)"的，但是这样写了之后用t.arae发现print还是会打印,后来发现是描述符在setattr时会把值绑定到函数名的【同名】变量上，即要调用t.area_t才行，所以又该回了函数名)
+(上面本来是想用"def area_t(self) ...... area = LazyProperty(area_t)"的，但是这样写了之后用t.arae发现print还是会打印,后来发现是本描述符在setattr时会把值绑定到函数名的【同名】变量上，即要调用t.area_t才行，所以又该回了函数名)
 ---------------------------------------------------
 描述符说明:
 ---------------------------------------------------
